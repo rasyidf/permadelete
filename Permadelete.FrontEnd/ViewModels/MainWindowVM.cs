@@ -163,13 +163,15 @@ namespace Permadelete.ViewModels
 
         private CommonOpenFileDialog GetOpenFileDialog(bool isFolderPicker = false)
         {
-            var dialog = new CommonOpenFileDialog();
-            dialog.EnsureFileExists = true;
-            dialog.EnsurePathExists = true;
-            dialog.EnsureValidNames = true;
-            dialog.Multiselect = true;
-            dialog.ShowHiddenItems = true;
-            dialog.IsFolderPicker = isFolderPicker;
+            var dialog = new CommonOpenFileDialog
+            {
+                EnsureFileExists = true,
+                EnsurePathExists = true,
+                EnsureValidNames = true,
+                Multiselect = true,
+                ShowHiddenItems = true,
+                IsFolderPicker = isFolderPicker
+            };
 
             return dialog;
         }

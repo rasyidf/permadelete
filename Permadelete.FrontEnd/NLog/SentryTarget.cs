@@ -45,16 +45,20 @@ namespace Permadelete.Nlog
         [Conditional("CLASSIC")]
         private void SendRaven(string message, LogLevel level)
         {
-            var sentryEvent = new SentryEvent(message);
-            sentryEvent.Level = ParseLogLevel(level);
+            var sentryEvent = new SentryEvent(message)
+            {
+                Level = ParseLogLevel(level)
+            };
             _ravenClient.Capture(sentryEvent);
         }
 
         [Conditional("CLASSIC")]
         private void SendRaven(Exception ex)
         {
-            var sentryEvent = new SentryEvent(ex);
-            sentryEvent.Level = ErrorLevel.Error;
+            var sentryEvent = new SentryEvent(ex)
+            {
+                Level = ErrorLevel.Error
+            };
             _ravenClient.Capture(sentryEvent);
         }
 

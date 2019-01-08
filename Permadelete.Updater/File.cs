@@ -17,7 +17,7 @@ namespace Permadelete.Updater
         {
             get
             {
-                return Name == null ? null : Name.Split('.').LastOrDefault();
+                return Name?.Split('.').LastOrDefault();
             }
         }
         public bool Overwrite { get; set; }

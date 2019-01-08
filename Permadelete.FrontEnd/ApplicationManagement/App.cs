@@ -67,8 +67,10 @@ namespace Permadelete.ApplicationManagement
             }
             else
             {
-                var window = new AgileWindow();
-                window.DataContext = new AgileWindowVM(e.Args);
+                var window = new AgileWindow
+                {
+                    DataContext = new AgileWindowVM(e.Args)
+                };
                 window.Show();
             }
 
